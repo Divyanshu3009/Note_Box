@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Note Box</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Splash Screen -->
+  <div id="splash">
+    <img src="logo.png" alt="Note Box Logo">
+  </div>
+
+  <!-- Navigation -->
+  <div id="nav-toggle" onclick="toggleNav()">☰</div>
+  <nav id="side-nav">
+    <div class="nav-item" onclick="showSection('sticky-notes')">🗒️ <span class="nav-label">Sticky Notes</span></div>
+    <div class="nav-item" onclick="showSection('hidden-notes')">🔐 <span class="nav-label">Hidden Notes</span></div>
+    <div class="nav-item" onclick="showSection('reminders')">⏰ <span class="nav-label">Reminders</span></div>
+    <div class="nav-item" onclick="showSection('settings')">⚙️ <span class="nav-label">Settings</span></div>
+  </nav>
+
+  <!-- Top Widget (Weather + Time) -->
+<div id="top-widget">
+  <div id="time">00:00</div>
+  <div id="weather">☁️ 28°C</div>
+</div>
+
+
+  <!-- Sticky Notes Layout -->
+  <section id="sticky-notes">
+    <header>
+      <h1>Sticky Notes</h1>
+    </header>
+    <main>
+      <button id="add-note">+ Add Note</button>
+      <div id="notes-list"></div>
+    </main>
+    <footer>
+      <button class="next-btn" onclick="showSection('hidden-notes')">➡</button>
+    </footer>
+  </section>
+
+  <!-- Hidden Notes Layout -->
+  <section id="hidden-notes" style="display:none;">
+    <header>
+      <h1>Hidden Notes</h1>
+    </header>
+    <main>
+      <div id="hidden-login">
+        <input type="password" placeholder="Enter Password">
+        <button>Unlock</button>
+      </div>
+      <div id="hidden-notes-list" style="display:none;">
+        <button>+ Add Hidden Note</button>
+      </div>
+    </main>
+    <footer>
+      <button class="prev-btn" onclick="showSection('sticky-notes')">⬅</button>
+      <button class="next-btn" onclick="showSection('weather')">➡</button>
+    </footer>
+  </section>
+
+
+  <!-- Reminders Layout -->
+  <section id="reminders" style="display:none;">
+    <header>
+      <h1>Reminders</h1>
+    </header>
+    <main>
+      <p>Reminder list placeholder</p>
+    </main>
+    <footer>
+      <button class="prev-btn" onclick="showSection('weather')">⬅</button>
+      <button class="next-btn" onclick="showSection('settings')">➡</button>
+    </footer>
+  </section>
+
+  <!-- Settings Layout -->
+  <section id="settings" style="display:none;">
+    <header>
+      <h1>Settings</h1>
+    </header>
+    <main>
+      <p>Theme, preferences, etc.</p>
+    </main>
+    <footer>
+      <button class="prev-btn" onclick="showSection('reminders')">⬅</button>
+    </footer>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

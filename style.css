@@ -1,0 +1,129 @@
+/* Reset + Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #1a1a1a;
+  color: white;
+}
+
+/* Splash Screen */
+#splash {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+#splash img {
+  width: 150px;
+}
+
+/* Navigation Bar */
+#nav-toggle {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+#side-nav {
+  width: 60px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  transition: width 0.3s ease;
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  z-index: 1000;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.nav-label {
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+}
+
+#side-nav.expanded {
+  width: 180px;
+  align-items: flex-start;
+  padding-left: 15px;
+}
+#side-nav.expanded .nav-label {
+  opacity: 1;
+}
+
+/* Section Styling */
+section {
+  margin-left: 60px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  background: rgba(255,255,255,0.05);
+  padding: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+main {
+  flex: 1;
+  padding: 20px;
+}
+footer {
+  padding: 10px;
+  background: rgba(255,255,255,0.05);
+  display: flex;
+  justify-content: space-between;
+}
+.prev-btn, .next-btn {
+  background: rgba(255,255,255,0.15);
+  border: none;
+  padding: 10px 15px;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.prev-btn:hover, .next-btn:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+
+/* Top Widget */
+#top-widget {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  background: rgba(255,255,255,0.08);
+  padding: 8px 15px;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  z-index: 1500;
+}
+
+#time, #weather {
+  font-size: 14px;
+  color: white;
+}
